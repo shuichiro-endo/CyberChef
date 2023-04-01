@@ -20,7 +20,7 @@ class LibreTranslate extends Operation {
 
         this.name = "LibreTranslate";
         this.module = "Default";
-        this.description = "";
+        this.description = "LibreTranslate<br><br>Note:<br>You need to change Output character encoding from Raw Bytes to UTF-8.";
         this.infoURL = "";
         this.inputType = "string";
         this.outputType = "string";
