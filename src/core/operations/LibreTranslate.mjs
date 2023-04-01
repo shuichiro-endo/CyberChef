@@ -102,7 +102,12 @@ class LibreTranslate extends Operation {
                             "tr",
                             "uk"
                 ]
-            }
+            },
+            {
+                name: "api key",
+                type: "string",
+                value: ""
+            },
         ];
     }
 
@@ -112,7 +117,7 @@ class LibreTranslate extends Operation {
      * @returns {string}
      */
     async run(input, args) {
-        const [url, source_lang, target_lang] = args;
+        const [url, source_lang, target_lang, api_key] = args;
 
         try {
             const res = await fetch(url, {
@@ -122,7 +127,7 @@ class LibreTranslate extends Operation {
                     source: `${source_lang}`,
                     target: `${target_lang}`,
                     format: "text",
-                    api_key: ""
+                    api_key: `${api_key}`
                 }),
                 headers: { "Content-Type": "application/json" }
             });
